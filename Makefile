@@ -6,13 +6,15 @@
 #    By: gade-oli <gade-oli@student.42madrid>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/23 12:53:42 by gade-oli          #+#    #+#              #
-#    Updated: 2022/12/23 14:21:56 by gade-oli         ###   ########.fr        #
+#    Updated: 2022/12/23 17:36:44 by gade-oli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-COLOUR_GREEN=\033[0;32m
-COLOUR_RED=\033[0;31m
-COLOUR_BLUE=\033[0;34m
+COLOUR_GREEN =\033[1;32m
+COLOUR_RED =\033[1;31m
+COLOUR_YELLOW =\033[1;33m
+COLOUR_BLUE =\033[1;34m
+NO_COLOUR =\033[0m
 
 CC		=	gcc
 CFLAGS	=	-Wall -Wextra -Werror
@@ -21,28 +23,37 @@ CFLAGS	=	-Wall -Wextra -Werror
 
 NAME	=	ft_printf.a
 
-SRC		=	src/ft_printf.c
+SRC		=	src/ft_printf.c src/ft_printf_num_utils.c
 
 OBJ		= 	$(SRC:.c=.o)
 
 #libft---------------------------------------------------------------------
 
-
+LIBFT_DIR = ./libft/
 
 #recipes-------------------------------------------------------------------
 
 all:		$(NAME)
-#??????????????????????????????????????
 
 $(NAME):	$(OBJ)
-			ar -rcs $(NAME) $(OBJ)
+			@echo "${COLOUR_BLUE}compiling libft...$(NO_COLOUR)"
+			@make -s -C ${LIBFT_DIR}
+			@echo "${COLOUR_BLUE}compiling ft_printf...$(NO_COLOUR)"
+			@ar -rcs $(NAME) $(OBJ)
+			@echo "$(COLOUR_GREEN)compilation ready!$(NO_COLOUR)"
 
 clean:	
-		rm -f $(OBJ)
+			@make clean -s -C $(LIBFT_DIR)
+			@echo "$(COLOUR_RED)libft objects removed!$(NO_COLOUR)"
+			@rm -f $(OBJ)
+			@echo "$(COLOUR_RED)ft_printf objects removed!$(NO_COLOUR)"
 
 fclean:
-		rm -f $(NAME)
+			@make fclean -s -C $(LIBFT_DIR)
+			@echo "$(COLOUR_RED)libft removed!$(NO_COLOUR)"
+			@rm -f $(NAME)
+			@echo "$(COLOUR_RED)ft_printf removed!$(NO_COLOUR)"
 
-re:		fclean all
+re:			fclean all
 
 .PHONY:	all clean fclean re

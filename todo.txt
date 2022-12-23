@@ -1,0 +1,8 @@
+done:
+- simple input
+- blank input
+- numbers as a parameter
+
+todo:
+- cspiuxX% (check what does do)
+- link libft.a to ft_printf.a (?)
