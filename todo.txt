@@ -4,5 +4,5 @@ done:
 - numbers as a parameter
 
 todo:
-- cspiuxX% (check what does do)
+- cspiuxX% (check what it does)
 - link libft.a to ft_printf.a (?)

@@ -6,7 +6,7 @@
 /*   By: gade-oli <gade-oli@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 17:08:02 by gade-oli          #+#    #+#             */
-/*   Updated: 2022/12/23 17:37:21 by gade-oli         ###   ########.fr       */
+/*   Updated: 2023/01/19 13:32:55 by gade-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,12 @@ int	print_num(va_list args)
 	ft_putstr_fd(res, 1);
 	free(res);
 	return (count(n));
+}
+
+int print_char(va_list args)
+{
+	unsigned char c;
+
+	c = va_arg(args, int);
+	return (1);
 }
