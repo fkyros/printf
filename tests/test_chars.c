@@ -26,17 +26,17 @@ void p_simple()
 
 	int stdout_backup = dup(1);
 	close(1); //para que ft_printf no vomite nada
-	n = ft_printf("hola %c\n", 'a');
+	n = ft_printf("a %c\n", 'b');
 	dup(stdout_backup);
 	close(stdout_backup); //restauro salida estandar
-	if (n == 7)
+	if (n == 4)
 		correct(prueba);
 	else
 	{
 		incorrect(prueba);
 		printf("n = %d\n", n);
-		printf("expected: hola %c\n", 'a');
-		ft_printf("hola %c\n", 'a');
+		printf("expected: a %c\n", 'b');
+		ft_printf("a %c\n", 'b');
 	}
 }
 

@@ -6,7 +6,7 @@
 /*   By: gade-oli <gade-oli@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 15:37:49 by gade-oli          #+#    #+#             */
-/*   Updated: 2023/01/19 13:33:01 by gade-oli         ###   ########.fr       */
+/*   Updated: 2023/01/20 13:19:09 by gade-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,9 @@ int	ft_printf(const char *str, ...)
 	i = 0;
 	while (str[i])
 	{
-		if (str[i++] == '%')
+		if (str[i] == '%')
 		{
+			i++;
 			if (!str[i])
 				break;
 			else
