@@ -6,7 +6,7 @@
 /*   By: gade-oli <gade-oli@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 17:08:02 by gade-oli          #+#    #+#             */
-/*   Updated: 2023/01/20 13:15:11 by gade-oli         ###   ########.fr       */
+/*   Updated: 2023/01/20 15:58:38 by gade-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,16 @@ int	count(int n)
 	return (res);
 }
 
-int	print_num(va_list args)
+int	print_num(va_list args, int unsign)
 {
 	int	n;
 	char *res;
 
 	n = va_arg(args, int);
-	res = ft_itoa(n);
+	if (unsign == 0)
+		res = ft_itoa(n);
+	else
+		res = ft_itoa((unsigned int) n);
 	ft_putstr_fd(res, 1);
 	free(res);
 	return (count(n));
@@ -48,4 +51,9 @@ int print_char(va_list args)
 	c = va_arg(args, int);
 	ft_putchar_fd(c, 1);
 	return (1);
+}
+
+int print_hex(va_list args)
+{
+	
 }

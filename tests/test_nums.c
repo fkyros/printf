@@ -14,6 +14,11 @@ void incorrect(char *msg)
         printf("❌: %s\n", msg);
 }
 
+void playground()
+{
+	printf("%u\n", -10);
+}
+
 void p_simple()
 {
 	char *prueba = "cuenta caracteres sin %";
@@ -98,9 +103,36 @@ void p_vacio()
 	}
 }
 
+void p_unsigned()
+{
+	char *prueba = "unsigned basico";
+	int n;
+
+	int stdout_backup = dup(1);
+	close(1); //para que ft_printf no vomite nada
+
+	n = ft_printf("%u", -10);
+	
+	dup(stdout_backup);
+	close(stdout_backup); //restauro salida estandar
+	unsigned int a = -10;
+	printf("%u\n", a);
+	ft_printf("%u\n", a);
+	/*if (n == 0)
+		correct(prueba);
+	else
+	{
+		incorrect(prueba);
+		printf("expected: \n");
+		ft_printf("");
+	}*/
+}
+
 int main(void)
 {
-	p_simple();
-	p_arg_num();
-	p_vacio();
+	//playground();
+	//p_simple();
+	//p_arg_num();
+	//p_vacio();
+	p_unsigned();
 }
