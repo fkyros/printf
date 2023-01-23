@@ -1,22 +1,6 @@
 #include "../inc/ft_printf.h"
 
-#include <stdio.h>
-#include <stdlib.h>
-
-void correct(char *msg)
-{
-        printf("✅: %s\n", msg);
-}
-
-
-void incorrect(char *msg)
-{
-        printf("❌: %s\n", msg);
-}
-
-void playground()
-{
-}
+#include "htest.h"
 
 void p_simple()
 {

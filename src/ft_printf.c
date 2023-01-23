@@ -6,7 +6,7 @@
 /*   By: gade-oli <gade-oli@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 15:37:49 by gade-oli          #+#    #+#             */
-/*   Updated: 2023/01/23 12:40:47 by gade-oli         ###   ########.fr       */
+/*   Updated: 2023/01/23 12:50:56 by gade-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ int	print_formatted(char c, va_list args)
 		nchars = print_char(args);
 	else if (c == 'u')
 		nchars = print_unsigned_num(args);
+	else if (c == 's')
+		nchars = print_str(args);
 	else if (c == '%')
 	{
 		ft_putchar_fd('%', 1);

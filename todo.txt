@@ -7,6 +7,6 @@ done:
 
 todo:
 - spxX% (check what it does)
-- print strings
 - hex converter
 - link libft.a to ft_printf.a (?)
+- add a multi-main with PREPROCESSING flags for tests
