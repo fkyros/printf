@@ -6,7 +6,7 @@
 #    By: gade-oli <gade-oli@student.42madrid>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/23 12:53:42 by gade-oli          #+#    #+#              #
-#    Updated: 2023/01/20 14:53:50 by gade-oli         ###   ########.fr        #
+#    Updated: 2023/01/23 12:28:52 by gade-oli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ CFLAGS	=	-Wall -Wextra -Werror
 
 NAME	=	ft_printf.a
 
-SRC		=	src/ft_printf.c src/ft_printf_num_utils.c
+SRC		=	src/ft_printf.c src/utils/ft_c.c src/utils/ft_di.c src/utils/ft_u.c
 
 OBJ		= 	$(SRC:.c=.o)
 

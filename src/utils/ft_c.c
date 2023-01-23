@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_c.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gade-oli <gade-oli@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/15 15:40:33 by gade-oli          #+#    #+#             */
-/*   Updated: 2023/01/23 12:38:19 by gade-oli         ###   ########.fr       */
+/*   Created: 2023/01/23 11:33:21 by gade-oli          #+#    #+#             */
+/*   Updated: 2023/01/23 11:38:23 by gade-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRINTF_H
-# define PRINTF_H
+#include "../../inc/ft_printf.h"
 
-# include "../libft/libft.h"
-# include <stdlib.h>
-# include <unistd.h>
-# include <stdarg.h>
+int	print_char(va_list args)
+{
+	unsigned char	c;
 
-int	ft_printf(const char *, ...);
-int	print_num(va_list args);
-int	print_unsigned_num(va_list args);
-int	print_char(va_list args);
-
-#endif
+	c = va_arg(args, int);
+	ft_putchar_fd(c, 1);
+	return (1);
+}

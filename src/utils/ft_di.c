@@ -1,26 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_printf_num_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gade-oli <gade-oli@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/15 15:40:33 by gade-oli          #+#    #+#             */
-/*   Updated: 2023/01/23 12:38:19 by gade-oli         ###   ########.fr       */
+/*   Created: 2022/12/23 17:08:02 by gade-oli          #+#    #+#             */
+/*   Updated: 2023/01/23 11:35:32 by gade-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRINTF_H
-# define PRINTF_H
+#include "../../inc/ft_printf.h"
 
-# include "../libft/libft.h"
-# include <stdlib.h>
-# include <unistd.h>
-# include <stdarg.h>
+int	count(int n)
+{
+	int	res;
 
-int	ft_printf(const char *, ...);
-int	print_num(va_list args);
-int	print_unsigned_num(va_list args);
-int	print_char(va_list args);
+	res = 0;
+	if (n == 0)
+		return (1);
+	if (n < 0)
+		res += 1;
+	while (n != 0)
+	{
+		n /= 10;
+		res++;
+	}
+	return (res);
+}
 
-#endif
+int	print_num(va_list args)
+{
+	int	n;
+
+	n = va_arg(args, int);
+	ft_putnbr_fd(n, 1);
+	return (count(n));
+}

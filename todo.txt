@@ -2,7 +2,11 @@ done:
 - simple input
 - blank input
 - numbers as a parameter
+- unsigned numbers
+- print chars
 
 todo:
-- cspiuxX% (check what it does)
+- spxX% (check what it does)
+- print strings
+- hex converter
 - link libft.a to ft_printf.a (?)
