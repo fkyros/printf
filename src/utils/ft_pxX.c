@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_c.c                                             :+:      :+:    :+:   */
+/*   ft_pxX.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gade-oli <gade-oli@student.42madrid>       +#+  +:+       +#+        */
+/*   By: gade-oli <gade-oli@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/23 11:33:21 by gade-oli          #+#    #+#             */
-/*   Updated: 2023/01/26 13:07:49 by gade-oli         ###   ########.fr       */
+/*   Created: 2023/01/26 11:15:49 by gade-oli          #+#    #+#             */
+/*   Updated: 2023/01/26 13:40:56 by gade-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/ft_printf.h"
 
-int	print_char(va_list args)
+int	print_hex(int n, char *hexbase, int p)
 {
-	unsigned char	c;
+	int		res;
 
-	c = va_arg(args, int);
-	ft_putchar_fd(c, 1);
-	return (1);
-}
-
-int	print_str(va_list args)
-{
-	char	*s;
-
-	s = va_arg(args, char *);
-	ft_putstr_fd(s, 1);
-	return (ft_strlen(s));
+	res = 0;
+	if (p)
+	{
+		ft_putstr_fd("0x", 2);
+		res += 2;
+	}
+	if (n >= 0 && n < 16)
+	{
+		ft_putchar_fd(hexbase[n - 1], 1);
+		res++;
+	}
+	print_hex(n / 16, hexbase, 0);
+	return (res);
 }

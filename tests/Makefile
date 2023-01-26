@@ -18,4 +18,9 @@ str:
 	gcc results.c test_str.c ../ft_printf.a ../libft/libft.a
 	./a.out
 
+hex:
+	@make -s -C ..
+	gcc results.c test_hex.c ../ft_printf.a ../libft/libft.a -g
+	./a.out
+
 .PHONY: nums chars str
