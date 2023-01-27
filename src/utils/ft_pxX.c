@@ -6,7 +6,7 @@
 /*   By: gade-oli <gade-oli@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 11:15:49 by gade-oli          #+#    #+#             */
-/*   Updated: 2023/01/26 13:40:56 by gade-oli         ###   ########.fr       */
+/*   Updated: 2023/01/27 11:13:07 by gade-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,10 @@ int	print_hex(int n, char *hexbase, int p)
 	}
 	if (n >= 0 && n < 16)
 	{
-		ft_putchar_fd(hexbase[n - 1], 1);
+		ft_putchar_fd(hexbase[n], 1);
 		res++;
 	}
-	print_hex(n / 16, hexbase, 0);
+	else
+		print_hex(n / 16, hexbase, 0);
 	return (res);
 }

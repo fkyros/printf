@@ -6,7 +6,7 @@
 /*   By: gade-oli <gade-oli@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 11:33:21 by gade-oli          #+#    #+#             */
-/*   Updated: 2023/01/26 13:07:49 by gade-oli         ###   ########.fr       */
+/*   Updated: 2023/01/27 11:12:36 by gade-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,18 @@ int	print_char(va_list args)
 int	print_str(va_list args)
 {
 	char	*s;
+	int		n;
 
 	s = va_arg(args, char *);
-	ft_putstr_fd(s, 1);
-	return (ft_strlen(s));
+	if (s == NULL)
+	{
+		ft_putstr_fd("(null)", 6);
+		n = 6;
+	}
+	else
+	{
+		n = ft_strlen(s);
+		ft_putstr_fd(s, n);
+	}
+	return (n);
 }

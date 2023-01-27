@@ -6,7 +6,7 @@
 #    By: gade-oli <gade-oli@student.42madrid>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/23 12:53:42 by gade-oli          #+#    #+#              #
-#    Updated: 2023/01/26 13:17:48 by gade-oli         ###   ########.fr        #
+#    Updated: 2023/01/27 10:38:55 by gade-oli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ CFLAGS	=	-Wall -Wextra -Werror
 
 #printf--------------------------------------------------------------------
 
-NAME	=	ft_printf.a
+NAME	=	libftprintf.a
 
 SRC		=	src/ft_printf.c src/utils/ft_c.c src/utils/ft_di.c src/utils/ft_u.c src/utils/ft_pxX.c
 
@@ -39,6 +39,8 @@ $(NAME):	$(OBJ)
 			@echo "${COLOUR_BLUE}compiling libft...$(NO_COLOUR)"
 			@make -s -C ${LIBFT_DIR}
 			@echo "${COLOUR_BLUE}compiling ft_printf...$(NO_COLOUR)"
+			@mv libft/libft.a .
+			@mv libft.a $(NAME)
 			@ar -rcs $(NAME) $(OBJ)
 			@echo "$(COLOUR_GREEN)compilation ready!$(NO_COLOUR)"
 

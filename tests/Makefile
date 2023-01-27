@@ -1,26 +1,26 @@
 all:
 	@make -s -C ..
-	gcc results.c test_nums.c test_chars.c test_str.c ../ft_printf.a ../libft/libft.a
-	./a.out
+	@gcc results.c test_nums.c test_chars.c test_str.c ../libftprintf.a
+	@./a.out
 
 nums:
 	@make -s -C ..
-	gcc results.c test_nums.c ../ft_printf.a ../libft/libft.a
-	./a.out
+	@gcc results.c test_nums.c ../libftprintf.a
+	@./a.out
 
 chars:
 	@make -s -C ..
-	gcc results.c test_chars.c ../ft_printf.a ../libft/libft.a
-	./a.out
+	@gcc results.c test_chars.c ../libftprintf.a
+	@./a.out
 
 str:
 	@make -s -C ..
-	gcc results.c test_str.c ../ft_printf.a ../libft/libft.a
-	./a.out
+	@gcc results.c test_str.c ../libftprintf.a -g
+	@./a.out
 
 hex:
 	@make -s -C ..
-	gcc results.c test_hex.c ../ft_printf.a ../libft/libft.a -g
-	./a.out
+	@gcc results.c test_hex.c ../libftprintf.a
+	@./a.out
 
-.PHONY: nums chars str
+.PHONY: nums chars str hex
