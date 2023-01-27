@@ -6,7 +6,7 @@
 /*   By: gade-oli <gade-oli@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 15:37:49 by gade-oli          #+#    #+#             */
-/*   Updated: 2023/01/27 10:45:11 by gade-oli         ###   ########.fr       */
+/*   Updated: 2023/01/27 14:43:42 by gade-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,11 @@ int	print_formatted(char c, va_list args)
 		nchars = 1;
 	}
 	else if (c == 'X')
-		nchars = print_hex(va_arg(args, int), "0123456789ABCDEF", 0);
+		nchars = print_hex(va_arg(args, int), 1);
 	else if (c == 'x')
-		nchars = print_hex(va_arg(args, int), "0123456789abcdef", 0);
+		nchars = print_hex(va_arg(args, int), 0);
 	else if (c == 'p')
-		nchars = print_hex(va_arg(args, int), "0123456789abcdef", 1);
+		nchars = print_pointer(va_arg(args, int));
 	return (nchars);
 }
 

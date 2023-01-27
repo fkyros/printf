@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_c.c                                             :+:      :+:    :+:   */
+/*   ft_cs.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gade-oli <gade-oli@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 11:33:21 by gade-oli          #+#    #+#             */
-/*   Updated: 2023/01/27 11:12:36 by gade-oli         ###   ########.fr       */
+/*   Updated: 2023/01/27 12:09:15 by gade-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,13 @@ int	print_str(va_list args)
 	s = va_arg(args, char *);
 	if (s == NULL)
 	{
-		ft_putstr_fd("(null)", 6);
+		ft_putstr_fd("(null)", 1);
 		n = 6;
 	}
 	else
 	{
 		n = ft_strlen(s);
-		ft_putstr_fd(s, n);
+		ft_putstr_fd(s, 1);
 	}
 	return (n);
 }

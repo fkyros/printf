@@ -6,28 +6,34 @@
 /*   By: gade-oli <gade-oli@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 11:15:49 by gade-oli          #+#    #+#             */
-/*   Updated: 2023/01/27 11:13:07 by gade-oli         ###   ########.fr       */
+/*   Updated: 2023/01/27 16:46:51 by gade-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/ft_printf.h"
 
-int	print_hex(int n, char *hexbase, int p)
+int	print_hex(unsigned int n, int flag)
 {
 	int		res;
+	char	*hexbase;
 
 	res = 0;
-	if (p)
-	{
-		ft_putstr_fd("0x", 2);
-		res += 2;
-	}
-	if (n >= 0 && n < 16)
-	{
-		ft_putchar_fd(hexbase[n], 1);
-		res++;
-	}
+	if (flag)
+		hexbase = "0123456789ABCDEF";
 	else
-		print_hex(n / 16, hexbase, 0);
+		hexbase = "0123456789abcdef";
+	if (n >= 16)
+		res += print_hex(n / 16, flag);
+	ft_putchar_fd(hexbase[n % 16], 1);
+	res++;
+	return (res);
+}
+
+int	print_pointer(int n)
+{
+	int	res;
+
+	ft_putstr_fd("0x", 1);
+	res = 2 + print_hex(n, 0);
 	return (res);
 }
