@@ -6,13 +6,13 @@
 /*   By: gade-oli <gade-oli@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 11:15:49 by gade-oli          #+#    #+#             */
-/*   Updated: 2023/01/27 16:46:51 by gade-oli         ###   ########.fr       */
+/*   Updated: 2023/02/07 00:03:39 by gade-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/ft_printf.h"
 
-int	print_hex(unsigned int n, int flag)
+unsigned int	print_hex(unsigned int n, int flag)
 {
 	int		res;
 	char	*hexbase;
@@ -29,11 +29,19 @@ int	print_hex(unsigned int n, int flag)
 	return (res);
 }
 
-int	print_pointer(int n)
+unsigned int	print_pointer(unsigned int n)
 {
 	int	res;
 
-	ft_putstr_fd("0x", 1);
-	res = 2 + print_hex(n, 0);
+	if (n == 0)
+	{
+		ft_putstr_fd("(nil)", 1);
+		res = 5;
+	}
+	else
+	{
+		ft_putstr_fd("0x", 1);
+		res = 2 + print_hex(n, 0);
+	}
 	return (res);
 }

@@ -6,7 +6,7 @@
 /*   By: gade-oli <gade-oli@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 15:40:33 by gade-oli          #+#    #+#             */
-/*   Updated: 2023/01/27 14:54:37 by gade-oli         ###   ########.fr       */
+/*   Updated: 2023/02/07 00:05:55 by gade-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	print_num(va_list args);
 int	print_unsigned_num(va_list args);
 int	print_char(va_list args);
 int	print_str(va_list args);
-int	print_hex(unsigned int n, int flag);
-int	print_pointer(int n);
+unsigned int	print_hex(unsigned int n, int flag);
+unsigned int	print_pointer(unsigned int n);
 
 #endif

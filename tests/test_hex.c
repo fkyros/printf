@@ -3,8 +3,7 @@
 
 void playground()
 {
-	int a = 0;
-	printf("puntero: %p\nhex: %X\n", &a, 10);
+	printf(" %p %p ", 0, 0);
 }
 
 void p_basichex()
@@ -86,9 +85,9 @@ void p_limits()
 
 	int stdout_backup = dup(1);
 	close(1); //para que ft_printf no vomite nada
-	n = ft_printf("0x%p-", (void *)ULONG_MAX);
+	n = ft_printf(" %p %p ", LONG_MIN, LONG_MAX);
 	FILE *devnull = fopen("/dev/null", "w");
-	np = fprintf(devnull, "0x%p-", (void *)ULONG_MAX);
+	np = fprintf(devnull, " %p %p ", LONG_MIN, LONG_MAX);
 	fclose(devnull);
     dup(stdout_backup);
     close(stdout_backup); //restauro salida estandar
@@ -98,8 +97,8 @@ void p_limits()
 	else
 	{
 		incorrect(prueba);
-		printf("expected: 0x%p-\n", (void *)ULONG_MAX);
-		ft_printf("0x%p-\n", (void *)ULONG_MAX);
+		printf("expected: %p %p \n", LONG_MIN, LONG_MAX);
+		ft_printf(" %p %p ", LONG_MIN, LONG_MAX);
 	}
 }
 

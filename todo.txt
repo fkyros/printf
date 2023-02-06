@@ -4,9 +4,9 @@ done:
 - numbers as a parameter
 - unsigned numbers
 - print chars
+- hex converter
 
 todo:
-- pxX% (check what it does)
-- hex converter
 - link libft.a to ft_printf.a (?)
 - add a multi-main with PREPROCESSING flags for tests
+- print LONG and UINT max values pointers
