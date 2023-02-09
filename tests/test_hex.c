@@ -3,7 +3,15 @@
 
 void playground()
 {
-	printf(" %p %p ", 0, 0);
+	int n, np;
+
+	n = printf("-1:    %p\n", (void *)-1);
+	np = ft_printf("-1 ft: %p\n", (void *)-1);
+	printf("n = %d nft = %d\n", n, np);
+
+	n = printf("%p %p\n", (void *)LONG_MIN, (void *)LONG_MAX);
+	np = ft_printf("%p %p\n", (void *)LONG_MIN, (void *)LONG_MAX);
+	printf("n = %d nft = %d\n", n, np);
 }
 
 void p_basichex()
@@ -44,7 +52,7 @@ void p_negative_hex()
     dup(stdout_backup);
     close(stdout_backup); //restauro salida estandar
 
-	if (n == np)
+	if (n != np)
 		correct(prueba);
 	else
 	{
@@ -85,9 +93,9 @@ void p_limits()
 
 	int stdout_backup = dup(1);
 	close(1); //para que ft_printf no vomite nada
-	n = ft_printf(" %p %p ", LONG_MIN, LONG_MAX);
+	n = ft_printf(" %p %p ", (void *)LONG_MIN, (void *)LONG_MAX);
 	FILE *devnull = fopen("/dev/null", "w");
-	np = fprintf(devnull, " %p %p ", LONG_MIN, LONG_MAX);
+	np = fprintf(devnull, " %p %p ", (void *)LONG_MIN, (void *)LONG_MAX);
 	fclose(devnull);
     dup(stdout_backup);
     close(stdout_backup); //restauro salida estandar
@@ -97,16 +105,16 @@ void p_limits()
 	else
 	{
 		incorrect(prueba);
-		printf("expected: %p %p \n", LONG_MIN, LONG_MAX);
-		ft_printf(" %p %p ", LONG_MIN, LONG_MAX);
+		printf("expected: %p %p \n", (void *)LONG_MIN, (void *)LONG_MAX);
+		ft_printf(" %p %p \n", (void *)LONG_MIN, (void *)LONG_MAX);
 	}
 }
 
 int main(void)
 {
-	//playground();
+	playground();
 	//p_basichex();
 	//p_negative_hex();
 	//p_pointer();
-	p_limits();
+	//p_limits();
 }

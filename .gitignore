@@ -1,1 +1,3 @@
 tests/a.out.dSYM/
+libftprintf.a
+tests/a.out
