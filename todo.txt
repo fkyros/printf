@@ -7,6 +7,5 @@ done:
 - hex converter
 
 todo:
-- link libft.a to ft_printf.a (?)
 - add a multi-main with PREPROCESSING flags for tests
 - print LONG and UINT max values pointers

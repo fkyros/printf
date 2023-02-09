@@ -6,7 +6,7 @@
 /*   By: gade-oli <gade-oli@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 15:37:49 by gade-oli          #+#    #+#             */
-/*   Updated: 2023/01/27 14:43:42 by gade-oli         ###   ########.fr       */
+/*   Updated: 2023/02/09 17:52:00 by gade-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	print_formatted(char c, va_list args)
 	else if (c == 'x')
 		nchars = print_hex(va_arg(args, int), 0);
 	else if (c == 'p')
-		nchars = print_pointer(va_arg(args, int));
+		nchars = print_pointer(va_arg(args, size_t));
 	return (nchars);
 }
 

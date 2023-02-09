@@ -6,3 +6,4 @@ make [test] -> test that feature
 test: 
 	+nums 
 	+char
+	+hex (+pointers)
